@@ -22,13 +22,13 @@ void events(const Ticks frameEnd, Offset *zscale)
 				zscale->y++;
 				break;
 			case SDLK_RIGHT:
-				zscale->x++;
+				zscale->x--;
 				break;
 			case SDLK_DOWN:
 				zscale->y--;
 				break;
 			case SDLK_LEFT:
-				zscale->x--;
+				zscale->x++;
 				break;
 			}
 			break;
