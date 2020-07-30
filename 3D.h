@@ -70,3 +70,20 @@ Coord coord3Project(const Coord3 c3, const Range win, const Offset zscale)
 	ret.y += c3.z*zscale.y;
 	return ret;
 }
+
+void drawLineCoord3(const Coord3 pos1, const Coord3 pos2, const Range win, const Offset zscale)
+{
+	drawLineCoords(
+		coord3Project(pos1, win, zscale),
+		coord3Project(pos2, win, zscale)
+	);
+}
+
+typedef enum{DIM_X, DIM_Y, DIM_Z}Dimension;
+
+Coord3 dimensionShift(const Coord3 c3, const Dimension dim, const int units)
+{
+	Coord3 ret = c3;
+	ret.arr[dim] += units;
+	return ret;
+}

@@ -40,10 +40,20 @@ int main(int argc, char const *argv[])
 	const int scale = 10;
 	Offset zscale = {3, -3};
 	init(win);
-
+	const Color axisc[3] = {RED, GREEN, BLUE};
 	while(1){
 		Ticks frameStart = getTicks();
 		clear();
+		for(uint i = 0; i < 3; i++){
+			setColor(axisc[i]);
+			Coord3 c3 = {0};
+			drawLineCoord3(
+				dimensionShift(c3, i,  500),
+				dimensionShift(c3, i, -500),
+				win,
+				zscale
+			);
+		}
 		setColor(WHITE);
 		drawAll(win, scale, zscale);
 		draw();

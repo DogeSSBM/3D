@@ -17,10 +17,10 @@
 #include <SDL2/SDL_net.h>
 
 #include "Types.h"
-#include "3D.h"
 #include "GetInt.h"
 #include "Colors.h"
 #include "Graphics.h"
+#include "3D.h"
 #include "Timing.h"
 #include "Events.h"
 #include "Text.h"
